@@ -6,3 +6,8 @@ coverage.data
 solr/solr/data/*
 .svn
 test/db/*.db
+*.sw?
+.DS_Store
+coverage
+rdoc
+pkg
