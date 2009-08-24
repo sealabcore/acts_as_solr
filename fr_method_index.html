@@ -1,0 +1,186 @@
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/Solr/Document.html#M000093"><< (Solr::Document)</a><br />
+    <a href="classes/Solr/Document.html#M000094">[] (Solr::Document)</a><br />
+    <a href="classes/Solr/Document.html#M000095">[]= (Solr::Document)</a><br />
+    <a href="classes/ActsAsSolr/ActsMethods.html#M000140">acts_as_solr (ActsAsSolr::ActsMethods)</a><br />
+    <a href="classes/Solr/Connection.html#M000099">add (Solr::Connection)</a><br />
+    <a href="classes/Solr/Indexer.html#M000086">add_docs (Solr::Indexer)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000137">add_scores (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/WebsolrController.html#M000004">cmd_add (WebsolrController)</a><br />
+    <a href="classes/WebsolrController.html#M000009">cmd_configure (WebsolrController)</a><br />
+    <a href="classes/WebsolrController.html#M000005">cmd_delete (WebsolrController)</a><br />
+    <a href="classes/WebsolrController.html#M000007">cmd_list (WebsolrController)</a><br />
+    <a href="classes/Solr/Connection.html#M000103">commit (Solr::Connection)</a><br />
+    <a href="classes/Solr/Request/Base.html#M000072">content_type (Solr::Request::Base)</a><br />
+    <a href="classes/Solr/Request/Select.html#M000081">content_type (Solr::Request::Select)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000116">count_by_solr (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/Solr/Connection.html#M000106">delete (Solr::Connection)</a><br />
+    <a href="classes/Solr/Connection.html#M000107">delete_by_query (Solr::Connection)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000154">docs (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Importer/SolrSource.html#M000022">each (Solr::Importer::SolrSource)</a><br />
+    <a href="classes/Solr/Document.html#M000097">each (Solr::Document)</a><br />
+    <a href="classes/Solr/Importer/DelimitedFileSource.html#M000024">each (Solr::Importer::DelimitedFileSource)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000036">each (Solr::Response::Standard)</a><br />
+    <a href="classes/ActsAsSolr/Post.html#M000144">execute (ActsAsSolr::Post)</a><br />
+    <a href="classes/ActsAsSolr/Post.html#M000146">execute_post (ActsAsSolr::Post)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000151">facets (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Importer/Mapper.html#M000018">field_data (Solr::Importer::Mapper)</a><br />
+    <a href="classes/Solr/Importer/HpricotMapper.html#M000027">field_data (Solr::Importer::HpricotMapper)</a><br />
+    <a href="classes/Solr/Importer/XPathMapper.html#M000025">field_data (Solr::Importer::XPathMapper)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000034">field_facets (Solr::Response::Standard)</a><br />
+    <a href="classes/Solr/Response/IndexInfo.html#M000046">field_names (Solr::Response::IndexInfo)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000111">find_by_solr (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000112">find_id_by_solr (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000114">find_multi_search_objects (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000134">find_objects (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000118">find_with_facet (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000124">get_solr_field_type (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/Solr/Request/Select.html#M000080">handler (Solr::Request::Select)</a><br />
+    <a href="classes/Solr/Request/ModifyDocument.html#M000060">handler (Solr::Request::ModifyDocument)</a><br />
+    <a href="classes/Solr/Request/Base.html#M000073">handler (Solr::Request::Base)</a><br />
+    <a href="classes/Solr/Request/Update.html#M000054">handler (Solr::Request::Update)</a><br />
+    <a href="classes/Solr/Request/Ping.html#M000077">handler (Solr::Request::Ping)</a><br />
+    <a href="classes/Solr/Request/IndexInfo.html#M000065">handler (Solr::Request::IndexInfo)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000158">highest_score (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000035">highlighted (Solr::Response::Standard)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000032">hits (Solr::Response::Standard)</a><br />
+    <a href="classes/Solr/Indexer.html#M000085">index (Solr::Indexer)</a><br />
+    <a href="classes/ActsAsSolr/InstanceMethods.html#M000121">indexing_disabled? (ActsAsSolr::InstanceMethods)</a><br />
+    <a href="classes/Solr/Connection.html#M000108">info (Solr::Connection)</a><br />
+    <a href="classes/ActsAsSolr/SolrFixtures.html#M000147">load (ActsAsSolr::SolrFixtures)</a><br />
+    <a href="classes/Solr/Response/Base.html#M000048">make_response (Solr::Response::Base)</a><br />
+    <a href="classes/Solr/Importer/ArrayMapper.html#M000016">map (Solr::Importer::ArrayMapper)</a><br />
+    <a href="classes/Solr/Importer/Mapper.html#M000020">map (Solr::Importer::Mapper)</a><br />
+    <a href="classes/Solr/Importer/Mapper.html#M000019">mapped_field_value (Solr::Importer::Mapper)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000152">max_score (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000033">max_score (Solr::Response::Standard)</a><br />
+    <a href="classes/WebsolrController.html#M000011">method_missing (WebsolrController)</a><br />
+    <a href="classes/ActsAsSolr/LazyDocument.html#M000160">method_missing (ActsAsSolr::LazyDocument)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000115">multi_model_suffix (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000113">multi_solr_search (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/Solr/Request/AddDocument.html#M000074">new (Solr::Request::AddDocument)</a><br />
+    <a href="classes/Solr/Request/Spellcheck.html#M000061">new (Solr::Request::Spellcheck)</a><br />
+    <a href="classes/ActsAsSolr/Post.html#M000145">new (ActsAsSolr::Post)</a><br />
+    <a href="classes/Solr/Request/Commit.html#M000063">new (Solr::Request::Commit)</a><br />
+    <a href="classes/WebsolrOptionParser.html#M000014">new (WebsolrOptionParser)</a><br />
+    <a href="classes/Solr/Importer/Mapper.html#M000017">new (Solr::Importer::Mapper)</a><br />
+    <a href="classes/Solr/Importer/SolrSource.html#M000021">new (Solr::Importer::SolrSource)</a><br />
+    <a href="classes/Solr/Request/Dismax.html#M000067">new (Solr::Request::Dismax)</a><br />
+    <a href="classes/Solr/Importer/DelimitedFileSource.html#M000023">new (Solr::Importer::DelimitedFileSource)</a><br />
+    <a href="classes/Solr/Request/Delete.html#M000069">new (Solr::Request::Delete)</a><br />
+    <a href="classes/Solr/Importer/XPathMapper.html#M000026">new (Solr::Importer::XPathMapper)</a><br />
+    <a href="classes/Solr/Importer/HpricotMapper.html#M000028">new (Solr::Importer::HpricotMapper)</a><br />
+    <a href="classes/Solr/Request/Standard.html#M000055">new (Solr::Request::Standard)</a><br />
+    <a href="classes/Solr/Request/ModifyDocument.html#M000058">new (Solr::Request::ModifyDocument)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000148">new (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000029">new (Solr::Response::Standard)</a><br />
+    <a href="classes/ActsAsSolr/LazyDocument.html#M000159">new (ActsAsSolr::LazyDocument)</a><br />
+    <a href="classes/Solr/Response/Select.html#M000052">new (Solr::Response::Select)</a><br />
+    <a href="classes/Solr/Request/Select.html#M000078">new (Solr::Request::Select)</a><br />
+    <a href="classes/Solr/Document.html#M000092">new (Solr::Document)</a><br />
+    <a href="classes/Solr/Response/Xml.html#M000037">new (Solr::Response::Xml)</a><br />
+    <a href="classes/Solr/Response/Ping.html#M000050">new (Solr::Response::Ping)</a><br />
+    <a href="classes/Solr/Response/ModifyDocument.html#M000039">new (Solr::Response::ModifyDocument)</a><br />
+    <a href="classes/Solr/Response/Spellcheck.html#M000040">new (Solr::Response::Spellcheck)</a><br />
+    <a href="classes/Solr/Indexer.html#M000084">new (Solr::Indexer)</a><br />
+    <a href="classes/Solr/Response/AddDocument.html#M000049">new (Solr::Response::AddDocument)</a><br />
+    <a href="classes/Solr/Response/Base.html#M000047">new (Solr::Response::Base)</a><br />
+    <a href="classes/Solr/Response/Ruby.html#M000041">new (Solr::Response::Ruby)</a><br />
+    <a href="classes/Solr/Connection.html#M000098">new (Solr::Connection)</a><br />
+    <a href="classes/Solr/Response/IndexInfo.html#M000044">new (Solr::Response::IndexInfo)</a><br />
+    <a href="classes/Solr/Field.html#M000090">new (Solr::Field)</a><br />
+    <a href="classes/WebsolrController.html#M000001">new (WebsolrController)</a><br />
+    <a href="classes/Solr/Response/IndexInfo.html#M000045">num_docs (Solr::Response::IndexInfo)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000156">num_found (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Response/Xml.html#M000038">ok? (Solr::Response::Xml)</a><br />
+    <a href="classes/Solr/Response/Ping.html#M000051">ok? (Solr::Response::Ping)</a><br />
+    <a href="classes/Solr/Response/Ruby.html#M000042">ok? (Solr::Response::Ruby)</a><br />
+    <a href="classes/Solr/Connection.html#M000104">optimize (Solr::Connection)</a><br />
+    <a href="classes/Solr/Util.html#M000087">paired_array_each (Solr::Util)</a><br />
+    <a href="classes/Solr/Util.html#M000088">paired_array_to_hash (Solr::Util)</a><br />
+    <a href="classes/WebsolrOptionParser.html#M000013">parse! (WebsolrOptionParser)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000131">parse_query (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000133">parse_results (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/Solr/Connection.html#M000105">ping (Solr::Connection)</a><br />
+    <a href="classes/ActsAsSolr/Deprecation.html#M000143">plog (ActsAsSolr::Deprecation)</a><br />
+    <a href="classes/Solr/Connection.html#M000110">post (Solr::Connection)</a><br />
+    <a href="classes/WebsolrController.html#M000008">print_errors (WebsolrController)</a><br />
+    <a href="classes/Solr/Connection.html#M000101">query (Solr::Connection)</a><br />
+    <a href="classes/Solr/Util.html#M000089">query_parser_escape (Solr::Util)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000153">query_time (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Response/Ruby.html#M000043">query_time (Solr::Response::Ruby)</a><br />
+    <a href="classes/ActsAsSolr/ClassMethods.html#M000117">rebuild_solr_index (ActsAsSolr::ClassMethods)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000130">record_id (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000155">records (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000135">reorder (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000136">replace_types (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/WebsolrController.html#M000002">required_options (WebsolrController)</a><br />
+    <a href="classes/Solr/Request/Update.html#M000053">response_format (Solr::Request::Update)</a><br />
+    <a href="classes/Solr/Request/Base.html#M000071">response_format (Solr::Request::Base)</a><br />
+    <a href="classes/Solr/Request/Select.html#M000079">response_format (Solr::Request::Select)</a><br />
+    <a href="classes/Solr/Request/Ping.html#M000076">response_format (Solr::Request::Ping)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000149">results (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000138">scorable_record? (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/Solr/Connection.html#M000102">search (Solr::Connection)</a><br />
+    <a href="classes/Solr/Connection.html#M000109">send (Solr::Connection)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000125">set_value_if_nil (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000126">solr_add (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000128">solr_commit (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000127">solr_delete (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/ActsAsSolr/InstanceMethods.html#M000122">solr_destroy (ActsAsSolr::InstanceMethods)</a><br />
+    <a href="classes/ActsAsSolr/InstanceMethods.html#M000119">solr_id (ActsAsSolr::InstanceMethods)</a><br />
+    <a href="classes/ActsAsSolr/CommonMethods.html#M000129">solr_optimize (ActsAsSolr::CommonMethods)</a><br />
+    <a href="classes/ActsAsSolr/InstanceMethods.html#M000120">solr_save (ActsAsSolr::InstanceMethods)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000132">solr_type_condition (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000031">start (Solr::Response::Standard)</a><br />
+    <a href="classes/WebsolrController.html#M000010">start (WebsolrController)</a><br />
+    <a href="classes/XML/Node.html#M000015">text= (XML::Node)</a><br />
+    <a href="classes/Solr/Request/Spellcheck.html#M000062">to_hash (Solr::Request::Spellcheck)</a><br />
+    <a href="classes/Solr/Request/IndexInfo.html#M000066">to_hash (Solr::Request::IndexInfo)</a><br />
+    <a href="classes/Solr/Request/Dismax.html#M000068">to_hash (Solr::Request::Dismax)</a><br />
+    <a href="classes/Solr/Request/Standard.html#M000056">to_hash (Solr::Request::Standard)</a><br />
+    <a href="classes/Solr/Request/Select.html#M000082">to_hash (Solr::Request::Select)</a><br />
+    <a href="classes/Solr/Request/Commit.html#M000064">to_s (Solr::Request::Commit)</a><br />
+    <a href="classes/Solr/Request/Select.html#M000083">to_s (Solr::Request::Select)</a><br />
+    <a href="classes/Solr/Request/AddDocument.html#M000075">to_s (Solr::Request::AddDocument)</a><br />
+    <a href="classes/Solr/Request/ModifyDocument.html#M000059">to_s (Solr::Request::ModifyDocument)</a><br />
+    <a href="classes/Solr/Request/Optimize.html#M000057">to_s (Solr::Request::Optimize)</a><br />
+    <a href="classes/Solr/Request/Delete.html#M000070">to_s (Solr::Request::Delete)</a><br />
+    <a href="classes/ActsAsSolr/InstanceMethods.html#M000123">to_solr_doc (ActsAsSolr::InstanceMethods)</a><br />
+    <a href="classes/Solr/Field.html#M000091">to_xml (Solr::Field)</a><br />
+    <a href="classes/Solr/Document.html#M000096">to_xml (Solr::Document)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000150">total (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Response/Standard.html#M000030">total_hits (Solr::Response::Standard)</a><br />
+    <a href="classes/ActsAsSolr/SearchResults.html#M000157">total_hits (ActsAsSolr::SearchResults)</a><br />
+    <a href="classes/Solr/Connection.html#M000100">update (Solr::Connection)</a><br />
+    <a href="classes/WebsolrController.html#M000003">url (WebsolrController)</a><br />
+    <a href="classes/WebsolrOptionParser.html#M000012">usage (WebsolrOptionParser)</a><br />
+    <a href="classes/ActsAsSolr/ParserMethods.html#M000139">validate_date_facet_other_options (ActsAsSolr::ParserMethods)</a><br />
+    <a href="classes/ActsAsSolr/Deprecation.html#M000142">validate_index (ActsAsSolr::Deprecation)</a><br />
+    <a href="classes/ActsAsSolr/Deprecation.html#M000141">validate_query (ActsAsSolr::Deprecation)</a><br />
+    <a href="classes/WebsolrController.html#M000006">x (WebsolrController)</a><br />
+  </div>
+</div>
+</body>
+</html>
