@@ -219,6 +219,8 @@ Gem::Specification.new do |s|
      "test/unit/solr_instance.rb",
      "test/unit/test_helper.rb"
   ]
+  
+  s.add_dependency "rest-client", [">= 1.0"]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
