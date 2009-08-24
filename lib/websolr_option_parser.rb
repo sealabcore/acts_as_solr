@@ -4,7 +4,7 @@ class WebsolrOptionParser < OptionParser
   attr_accessor :options
   
   def usage
-"Usage: #{$0} COMMAND [options] 
+"Usage: #{$0} COMMAND [INDEX_NAME] [options] 
 
     COMMANDs:
     add        - creates a new index
@@ -18,6 +18,7 @@ class WebsolrOptionParser < OptionParser
   def parse!
     super
     self.options[:command] = ARGV[0]
+    self.options[:name] ||= ARGV[1]
   end
   
   def initialize

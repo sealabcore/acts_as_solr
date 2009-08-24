@@ -16,15 +16,12 @@ Gem::Specification.new do |s|
   s.executables = ["websolr"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.markdown",
      "README.rdoc"
   ]
   s.files = [
     ".document",
      ".gitignore",
-     "CHANGE_LOG",
      "LICENSE",
-     "README.markdown",
      "README.rdoc",
      "Rakefile",
      "TESTING_THE_PLUGIN",
@@ -33,7 +30,6 @@ Gem::Specification.new do |s|
      "config/solr.yml",
      "config/solr_environment.rb",
      "lib/acts_as_solr.rb",
-     "lib/acts_as_websolr.rb",
      "lib/acts_methods.rb",
      "lib/class_methods.rb",
      "lib/common_methods.rb",
