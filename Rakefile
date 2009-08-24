@@ -93,6 +93,9 @@ rescue LoadError
   end
 end
 
+task :doc do
+end
+
 task :test => :check_dependencies
 
 task :default => :test
