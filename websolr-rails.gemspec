@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{websolr-rails}
-  s.version = "1.1.0"
+  s.version = "1.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "bin/websolr",
      "config/solr.yml",
      "config/solr_environment.rb",
+     "generate_rdoc.sh",
      "lib/acts_as_solr.rb",
      "lib/acts_methods.rb",
      "lib/class_methods.rb",
