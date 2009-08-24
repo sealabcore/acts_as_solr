@@ -90,6 +90,13 @@ end
 STR
           f.puts str
         end
+        
+        FileUtils.mkdir_p "lib/tasks"
+        path = "lib/tasks/websolr.rake"
+        puts "Writing #{path}"
+        File.open(path, "w") do |f|
+          f.puts "require 'rubygems'\nrequire 'websolr_rails/tasks'"
+        end
       end
     end
     unless found
