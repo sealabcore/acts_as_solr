@@ -82,7 +82,7 @@ class WebsolrController
         path = "config/initializers/websolr_#{rails_env}.rb"
         puts "Writing #{path}"
         File.open(path, "w") do |f|
-          f.puts "ENV['WEBSOLR_URL'] ||= '#{x node, 'base-url'}'"
+          f.puts "require 'websolr'\nENV['WEBSOLR_URL'] ||= '#{x node, 'base-url'}'"
         end
       end
     end
