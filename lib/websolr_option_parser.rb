@@ -4,7 +4,7 @@ class WebsolrOptionParser < OptionParser
   attr_accessor :options
   
   def usage
-"Usage: #{$0} [options] COMMAND
+"Usage: #{$0} COMMAND [options] 
 
     COMMANDs:
     add        - creates a new index

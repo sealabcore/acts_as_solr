@@ -59,12 +59,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "websolr-rails"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{acts_as_solr compatible gem for websolr}
+    gem.description = %Q{acts_as_solr compatible gem for websolr}
     gem.email = "kyle@kylemaxwell.com"
     gem.homepage = "http://github.com/onemorecloud/websolr-rails"
     gem.authors = ["Kyle Maxwell"]
     gem.add_development_dependency "thoughtbot-shoulda"
+    gem.default_executable = %q{websolr}
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError

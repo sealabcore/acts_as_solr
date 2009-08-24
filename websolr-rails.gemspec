@@ -9,9 +9,11 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2009-08-21}
-  s.description = %q{TODO: longer description of your gem}
+  s.date = %q{2009-08-24}
+  s.default_executable = %q{websolr}
+  s.description = %q{acts_as_solr compatible gem for websolr}
   s.email = %q{kyle@kylemaxwell.com}
+  s.executables = ["websolr"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.markdown",
@@ -27,11 +29,11 @@ Gem::Specification.new do |s|
      "Rakefile",
      "TESTING_THE_PLUGIN",
      "VERSION",
+     "bin/websolr",
      "config/solr.yml",
      "config/solr_environment.rb",
-     "init.rb",
-     "install.rb",
      "lib/acts_as_solr.rb",
+     "lib/acts_as_websolr.rb",
      "lib/acts_methods.rb",
      "lib/class_methods.rb",
      "lib/common_methods.rb",
@@ -89,6 +91,10 @@ Gem::Specification.new do |s|
      "lib/tasks/database.rake",
      "lib/tasks/solr.rake",
      "lib/tasks/test.rake",
+     "lib/websolr-rails.rb",
+     "lib/websolr.rb",
+     "lib/websolr_controller.rb",
+     "lib/websolr_option_parser.rb",
      "solr/CHANGES.txt",
      "solr/LICENSE.txt",
      "solr/NOTICE.txt",
@@ -177,13 +183,14 @@ Gem::Specification.new do |s|
      "test/unit/parser_instance.rb",
      "test/unit/parser_methods_shoulda.rb",
      "test/unit/solr_instance.rb",
-     "test/unit/test_helper.rb"
+     "test/unit/test_helper.rb",
+     "websolr-rails.gemspec"
   ]
   s.homepage = %q{http://github.com/onemorecloud/websolr-rails}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Websolr-friendly fork of acts_as_solr}
+  s.summary = %q{acts_as_solr compatible gem for websolr}
   s.test_files = [
     "test/db/connections/mysql/connection.rb",
      "test/db/connections/sqlite/connection.rb",
@@ -219,8 +226,6 @@ Gem::Specification.new do |s|
      "test/unit/solr_instance.rb",
      "test/unit/test_helper.rb"
   ]
-  
-  s.add_dependency "rest-client", [">= 1.0"]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

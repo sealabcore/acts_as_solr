@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
-$: << File.dirname(__FILE__) + "/../lib"
-require "websolr_option_parser"
-require "websolr_controller"
+require File.dirname(__FILE__) + "/../lib/websolr_option_parser"
+require File.dirname(__FILE__) + "/../lib/websolr_controller"
 
 parser = WebsolrOptionParser.new
 parser.parse!

@@ -11,3 +11,4 @@ test/db/*.db
 coverage
 rdoc
 pkg
+*.gem
