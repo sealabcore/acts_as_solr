@@ -4,6 +4,10 @@
 This gem provides Rails support for websolr.com, and a command-line tool to interact with 
 the indexes hosted there.  The Rails support is reverse-compatible with acts_as_solr.
 
+== RDoc
+
+Ruby documentation is at http://onemorecloud.github.com/websolr-rails
+
 == Current Release
 
 There is no numbered release yet, but the master branch is always considered stable.
@@ -20,7 +24,6 @@ Please refer to the CHANGELOG[http://github.com/mattmatt/acts_as_solr/blob/maste
 
 $: gem sources -a http://gems.github.com
 $: sudo gem install onemorecloud-websolr-rails
-
 
 == Configuration
 
