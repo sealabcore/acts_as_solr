@@ -94,6 +94,12 @@ rescue LoadError
 end
 
 task :doc do
+  require "fileutils"
+  include FileUtils::Verbose
+  rm_rf "doc"
+  mkdir "doc"
+  system "cd doc && git clone git@github.com:onemorecloud/websolr-rails.git && git checkout gh-pages"
+  
 end
 
 task :test => :check_dependencies
