@@ -16,6 +16,10 @@ module ActsAsSolr #:nodoc:
         query_options[:rows] = options[:limit]
         query_options[:operator] = options[:operator]
 
+        if options[:highlight] == true
+          options[:highlight] = {:fields => "*"}
+        end
+        
         if options[:highlight]
           query_options[:highlighting] = {}
           query_options[:highlighting][:field_list] = []
