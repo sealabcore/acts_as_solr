@@ -15,6 +15,16 @@ module ActsAsSolr #:nodoc:
         query_options[:start] = options[:offset]
         query_options[:rows] = options[:limit]
         query_options[:operator] = options[:operator]
+
+        if options[:highlight]
+          query_options[:highlighting] = {}
+          query_options[:highlighting][:field_list] = []
+          query_options[:highlighting][:field_list] << options[:highlight][:fields].collect {|k| "#{k}_t"} if options[:highlight][:fields]
+          query_options[:highlighting][:require_field_match] =  options[:highlight][:require_field_match] if options[:highlight][:require_field_match]
+          query_options[:highlighting][:max_snippets] = options[:highlight][:max_snippets] if options[:highlight][:max_snippets]
+          query_options[:highlighting][:prefix] = options[:highlight][:prefix] if options[:highlight][:prefix]
+          query_options[:highlighting][:suffix] = options[:highlight][:suffix] if options[:highlight][:suffix]
+        end
         
         # first steps on the facet parameter processing
         if options[:facets]
@@ -28,16 +38,6 @@ module ActsAsSolr #:nodoc:
           query_options[:facets][:fields] = options[:facets][:fields].collect{|k| "#{k}_facet"} if options[:facets][:fields]
           query_options[:filter_queries] = replace_types([*options[:facets][:browse]].collect{|k| "#{k.sub!(/ *: */,"_facet:")}"}) if options[:facets][:browse]
           query_options[:facets][:queries] = replace_types(options[:facets][:query].collect{|k| "#{k.sub!(/ *: */,"_t:")}"}) if options[:facets][:query]
-          
-          if options[:highlight]
-            query_options[:highlighting] = {}
-            query_options[:highlighting][:field_list] = []
-            query_options[:highlighting][:field_list] << options[:highlight][:fields].collect {|k| "#{k}_t"} if options[:highlight][:fields]
-            query_options[:highlighting][:require_field_match] =  options[:highlight][:require_field_match] if options[:highlight][:require_field_match]
-            query_options[:highlighting][:max_snippets] = options[:highlight][:max_snippets] if options[:highlight][:max_snippets]
-            query_options[:highlighting][:prefix] = options[:highlight][:prefix] if options[:highlight][:prefix]
-            query_options[:highlighting][:suffix] = options[:highlight][:suffix] if options[:highlight][:suffix]
-          end
           
           if options[:facets][:dates]
             query_options[:date_facets] = {}
