@@ -5,7 +5,7 @@ rdoc --op /tmp/websolr-rails-rdoc --main README.rdoc README.rdoc lib
 cd /tmp/websolr-rails
 git checkout origin/gh-pages
 git checkout -b gh-pages
-git checkout gh-pages
+rm -rf /tmp/websolr-rails/*
 mv /tmp/websolr-rails-rdoc/* .
 git add .
 git add -u
