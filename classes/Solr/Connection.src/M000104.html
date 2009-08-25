@@ -5,14 +5,14 @@
 
 <html>
 <head>
-  <title>optimize (Solr::Connection)</title>
+  <title>commit (Solr::Connection)</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File lib/solr/connection.rb, line 115</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">optimize</span>
-    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">send</span>(<span class="ruby-constant">Solr</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span><span class="ruby-operator">::</span><span class="ruby-constant">Optimize</span>.<span class="ruby-identifier">new</span>)
+  <pre><span class="ruby-comment cmt"># File lib/solr/connection.rb, line 109</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">commit</span>(<span class="ruby-identifier">options</span>={})
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">send</span>(<span class="ruby-constant">Solr</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span><span class="ruby-operator">::</span><span class="ruby-constant">Commit</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>))
     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">ok?</span>
   <span class="ruby-keyword kw">end</span></pre>
 </body>

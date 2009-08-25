@@ -85,7 +85,7 @@ href="../Solr/Response/Standard.html">Solr::Response::Standard</a>
 </p>
 <p>
 Class that returns the search <a
-href="SearchResults.html#M000149">results</a> with four methods.
+href="SearchResults.html#M000154">results</a> with four methods.
 </p>
 <pre>
   books = Book.find_by_solr 'ruby'
@@ -95,33 +95,33 @@ the above will return a <a href="SearchResults.html">SearchResults</a>
 class with 4 methods:
 </p>
 <p>
-<a href="SearchResults.html#M000154">docs</a>|<a
-href="SearchResults.html#M000149">results</a>|<a
-href="SearchResults.html#M000155">records</a>: will return an array of <a
-href="SearchResults.html#M000155">records</a> found
+<a href="SearchResults.html#M000160">docs</a>|<a
+href="SearchResults.html#M000154">results</a>|<a
+href="SearchResults.html#M000161">records</a>: will return an array of <a
+href="SearchResults.html#M000161">records</a> found
 </p>
 <pre>
   books.records.empty?
   =&gt; false
 </pre>
 <p>
-<a href="SearchResults.html#M000150">total</a>|<a
-href="SearchResults.html#M000156">num_found</a>|<a
-href="SearchResults.html#M000157">total_hits</a>: will return the <a
-href="SearchResults.html#M000150">total</a> number of <a
-href="SearchResults.html#M000155">records</a> found
+<a href="SearchResults.html#M000155">total</a>|<a
+href="SearchResults.html#M000162">num_found</a>|<a
+href="SearchResults.html#M000163">total_hits</a>: will return the <a
+href="SearchResults.html#M000155">total</a> number of <a
+href="SearchResults.html#M000161">records</a> found
 </p>
 <pre>
   books.total
   =&gt; 2
 </pre>
 <p>
-<a href="SearchResults.html#M000151">facets</a>: will return the <a
-href="SearchResults.html#M000151">facets</a> when doing a faceted search
+<a href="SearchResults.html#M000156">facets</a>: will return the <a
+href="SearchResults.html#M000156">facets</a> when doing a faceted search
 </p>
 <p>
-<a href="SearchResults.html#M000152">max_score</a>|<a
-href="SearchResults.html#M000158">highest_score</a>: returns the highest
+<a href="SearchResults.html#M000157">max_score</a>|<a
+href="SearchResults.html#M000164">highest_score</a>: returns the highest
 score found
 </p>
 <pre>
@@ -138,17 +138,18 @@ score found
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000154">docs</a>&nbsp;&nbsp;
-      <a href="#M000151">facets</a>&nbsp;&nbsp;
-      <a href="#M000158">highest_score</a>&nbsp;&nbsp;
-      <a href="#M000152">max_score</a>&nbsp;&nbsp;
-      <a href="#M000148">new</a>&nbsp;&nbsp;
-      <a href="#M000156">num_found</a>&nbsp;&nbsp;
-      <a href="#M000153">query_time</a>&nbsp;&nbsp;
-      <a href="#M000155">records</a>&nbsp;&nbsp;
-      <a href="#M000149">results</a>&nbsp;&nbsp;
-      <a href="#M000150">total</a>&nbsp;&nbsp;
-      <a href="#M000157">total_hits</a>&nbsp;&nbsp;
+      <a href="#M000160">docs</a>&nbsp;&nbsp;
+      <a href="#M000156">facets</a>&nbsp;&nbsp;
+      <a href="#M000164">highest_score</a>&nbsp;&nbsp;
+      <a href="#M000159">highlights</a>&nbsp;&nbsp;
+      <a href="#M000157">max_score</a>&nbsp;&nbsp;
+      <a href="#M000153">new</a>&nbsp;&nbsp;
+      <a href="#M000162">num_found</a>&nbsp;&nbsp;
+      <a href="#M000158">query_time</a>&nbsp;&nbsp;
+      <a href="#M000161">records</a>&nbsp;&nbsp;
+      <a href="#M000154">results</a>&nbsp;&nbsp;
+      <a href="#M000155">total</a>&nbsp;&nbsp;
+      <a href="#M000163">total_hits</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -170,12 +171,12 @@ score found
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000148" class="method-detail">
-        <a name="M000148"></a>
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
 
         <div class="method-heading">
-          <a href="SearchResults.src/M000148.html" target="Code" class="method-signature"
-            onclick="popupCode('SearchResults.src/M000148.html');return false;">
+          <a href="SearchResults.src/M000153.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000153.html');return false;">
           <span class="method-name">new</span><span class="method-args">(solr_data={})</span>
           </a>
         </div>
@@ -186,8 +187,8 @@ score found
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000154" class="method-detail">
-        <a name="M000154"></a>
+      <div id="method-M000160" class="method-detail">
+        <a name="M000160"></a>
 
         <div class="method-heading">
           <span class="method-name">docs</span><span class="method-args">()</span>
@@ -195,57 +196,7 @@ score found
       
         <div class="method-description">
           <p>
-Alias for <a href="SearchResults.html#M000149">results</a>
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000151" class="method-detail">
-        <a name="M000151"></a>
-
-        <div class="method-heading">
-          <a href="SearchResults.src/M000151.html" target="Code" class="method-signature"
-            onclick="popupCode('SearchResults.src/M000151.html');return false;">
-          <span class="method-name">facets</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns the <a href="SearchResults.html#M000151">facets</a> when doing a
-faceted search
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000158" class="method-detail">
-        <a name="M000158"></a>
-
-        <div class="method-heading">
-          <span class="method-name">highest_score</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Alias for <a href="SearchResults.html#M000152">max_score</a>
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000152" class="method-detail">
-        <a name="M000152"></a>
-
-        <div class="method-heading">
-          <a href="SearchResults.src/M000152.html" target="Code" class="method-signature"
-            onclick="popupCode('SearchResults.src/M000152.html');return false;">
-          <span class="method-name">max_score</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns the highest score found. This method is also aliased as <a
-href="SearchResults.html#M000158">highest_score</a>
+Alias for <a href="SearchResults.html#M000154">results</a>
 </p>
         </div>
       </div>
@@ -254,22 +205,86 @@ href="SearchResults.html#M000158">highest_score</a>
         <a name="M000156"></a>
 
         <div class="method-heading">
+          <a href="SearchResults.src/M000156.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000156.html');return false;">
+          <span class="method-name">facets</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="SearchResults.html#M000156">facets</a> when doing a
+faceted search
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000164" class="method-detail">
+        <a name="M000164"></a>
+
+        <div class="method-heading">
+          <span class="method-name">highest_score</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="SearchResults.html#M000157">max_score</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000159" class="method-detail">
+        <a name="M000159"></a>
+
+        <div class="method-heading">
+          <a href="SearchResults.src/M000159.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000159.html');return false;">
+          <span class="method-name">highlights</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000157" class="method-detail">
+        <a name="M000157"></a>
+
+        <div class="method-heading">
+          <a href="SearchResults.src/M000157.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000157.html');return false;">
+          <span class="method-name">max_score</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the highest score found. This method is also aliased as <a
+href="SearchResults.html#M000164">highest_score</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000162" class="method-detail">
+        <a name="M000162"></a>
+
+        <div class="method-heading">
           <span class="method-name">num_found</span><span class="method-args">()</span>
         </div>
       
         <div class="method-description">
           <p>
-Alias for <a href="SearchResults.html#M000150">total</a>
+Alias for <a href="SearchResults.html#M000155">total</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000153" class="method-detail">
-        <a name="M000153"></a>
+      <div id="method-M000158" class="method-detail">
+        <a name="M000158"></a>
 
         <div class="method-heading">
-          <a href="SearchResults.src/M000153.html" target="Code" class="method-signature"
-            onclick="popupCode('SearchResults.src/M000153.html');return false;">
+          <a href="SearchResults.src/M000158.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000158.html');return false;">
           <span class="method-name">query_time</span><span class="method-args">()</span>
           </a>
         </div>
@@ -278,8 +293,8 @@ Alias for <a href="SearchResults.html#M000150">total</a>
         </div>
       </div>
 
-      <div id="method-M000155" class="method-detail">
-        <a name="M000155"></a>
+      <div id="method-M000161" class="method-detail">
+        <a name="M000161"></a>
 
         <div class="method-heading">
           <span class="method-name">records</span><span class="method-args">()</span>
@@ -287,17 +302,17 @@ Alias for <a href="SearchResults.html#M000150">total</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="SearchResults.html#M000149">results</a>
+Alias for <a href="SearchResults.html#M000154">results</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000149" class="method-detail">
-        <a name="M000149"></a>
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
 
         <div class="method-heading">
-          <a href="SearchResults.src/M000149.html" target="Code" class="method-signature"
-            onclick="popupCode('SearchResults.src/M000149.html');return false;">
+          <a href="SearchResults.src/M000154.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000154.html');return false;">
           <span class="method-name">results</span><span class="method-args">()</span>
           </a>
         </div>
@@ -305,34 +320,34 @@ Alias for <a href="SearchResults.html#M000149">results</a>
         <div class="method-description">
           <p>
 Returns an array with the instances. This method is also aliased as <a
-href="SearchResults.html#M000154">docs</a> and <a
-href="SearchResults.html#M000155">records</a>
+href="SearchResults.html#M000160">docs</a> and <a
+href="SearchResults.html#M000161">records</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000150" class="method-detail">
-        <a name="M000150"></a>
+      <div id="method-M000155" class="method-detail">
+        <a name="M000155"></a>
 
         <div class="method-heading">
-          <a href="SearchResults.src/M000150.html" target="Code" class="method-signature"
-            onclick="popupCode('SearchResults.src/M000150.html');return false;">
+          <a href="SearchResults.src/M000155.html" target="Code" class="method-signature"
+            onclick="popupCode('SearchResults.src/M000155.html');return false;">
           <span class="method-name">total</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-Returns the <a href="SearchResults.html#M000150">total</a> <a
-href="SearchResults.html#M000155">records</a> found. This method is also
-aliased as <a href="SearchResults.html#M000156">num_found</a> and <a
-href="SearchResults.html#M000157">total_hits</a>
+Returns the <a href="SearchResults.html#M000155">total</a> <a
+href="SearchResults.html#M000161">records</a> found. This method is also
+aliased as <a href="SearchResults.html#M000162">num_found</a> and <a
+href="SearchResults.html#M000163">total_hits</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000157" class="method-detail">
-        <a name="M000157"></a>
+      <div id="method-M000163" class="method-detail">
+        <a name="M000163"></a>
 
         <div class="method-heading">
           <span class="method-name">total_hits</span><span class="method-args">()</span>
@@ -340,7 +355,7 @@ href="SearchResults.html#M000157">total_hits</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="SearchResults.html#M000150">total</a>
+Alias for <a href="SearchResults.html#M000155">total</a>
 </p>
         </div>
       </div>

@@ -5,20 +5,15 @@
 
 <html>
 <head>
-  <title>to_hash (Solr::Request::Spellcheck)</title>
+  <title>new (Solr::Request::Spellcheck)</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File lib/solr/request/spellcheck.rb, line 20</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>
-    <span class="ruby-identifier">hash</span> = <span class="ruby-keyword kw">super</span>
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:q</span>] = <span class="ruby-ivar">@params</span>[<span class="ruby-identifier">:query</span>]
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:suggestionCount</span>] = <span class="ruby-ivar">@params</span>[<span class="ruby-identifier">:suggestion_count</span>]
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:accuracy</span>] = <span class="ruby-ivar">@params</span>[<span class="ruby-identifier">:accuracy</span>]
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:onlyMorePopular</span>] = <span class="ruby-ivar">@params</span>[<span class="ruby-identifier">:only_more_popular</span>]
-    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:cmd</span>] = <span class="ruby-ivar">@params</span>[<span class="ruby-identifier">:command</span>]
-    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">hash</span>
+  <pre><span class="ruby-comment cmt"># File lib/solr/request/spellcheck.rb, line 15</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">params</span>)
+    <span class="ruby-keyword kw">super</span>(<span class="ruby-value str">'spellchecker'</span>)
+    <span class="ruby-ivar">@params</span> = <span class="ruby-identifier">params</span>
   <span class="ruby-keyword kw">end</span></pre>
 </body>
 </html>

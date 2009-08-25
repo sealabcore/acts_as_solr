@@ -63,6 +63,10 @@
                 lib/deprecation.rb
                 </a>
         <br />
+                <a href="../../files/lib/will_paginate_support_rb.html">
+                lib/will_paginate_support.rb
+                </a>
+        <br />
             </td>
         </tr>
 
@@ -84,14 +88,16 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000116">count_by_solr</a>&nbsp;&nbsp;
-      <a href="#M000111">find_by_solr</a>&nbsp;&nbsp;
-      <a href="#M000112">find_id_by_solr</a>&nbsp;&nbsp;
-      <a href="#M000114">find_multi_search_objects</a>&nbsp;&nbsp;
-      <a href="#M000118">find_with_facet</a>&nbsp;&nbsp;
-      <a href="#M000115">multi_model_suffix</a>&nbsp;&nbsp;
-      <a href="#M000113">multi_solr_search</a>&nbsp;&nbsp;
-      <a href="#M000117">rebuild_solr_index</a>&nbsp;&nbsp;
+      <a href="#M000117">count_by_solr</a>&nbsp;&nbsp;
+      <a href="#M000121">find_all_by_solr</a>&nbsp;&nbsp;
+      <a href="#M000112">find_by_solr</a>&nbsp;&nbsp;
+      <a href="#M000113">find_id_by_solr</a>&nbsp;&nbsp;
+      <a href="#M000115">find_multi_search_objects</a>&nbsp;&nbsp;
+      <a href="#M000119">find_with_facet</a>&nbsp;&nbsp;
+      <a href="#M000116">multi_model_suffix</a>&nbsp;&nbsp;
+      <a href="#M000114">multi_solr_search</a>&nbsp;&nbsp;
+      <a href="#M000120">paginate_by_solr</a>&nbsp;&nbsp;
+      <a href="#M000118">rebuild_solr_index</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -121,12 +127,12 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000116" class="method-detail">
-        <a name="M000116"></a>
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
 
         <div class="method-heading">
-          <a href="ClassMethods.src/M000116.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000116.html');return false;">
+          <a href="ClassMethods.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000117.html');return false;">
           <span class="method-name">count_by_solr</span><span class="method-args">(query, options = {})</span>
           </a>
         </div>
@@ -141,12 +147,26 @@ returns the total number of documents found in the query specified:
         </div>
       </div>
 
-      <div id="method-M000111" class="method-detail">
-        <a name="M000111"></a>
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
 
         <div class="method-heading">
-          <a href="ClassMethods.src/M000111.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000111.html');return false;">
+          <a href="ClassMethods.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000121.html');return false;">
+          <span class="method-name">find_all_by_solr</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="ClassMethods.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000112.html');return false;">
           <span class="method-name">find_by_solr</span><span class="method-args">(query, options={})</span>
           </a>
         </div>
@@ -283,7 +303,7 @@ Examples of date faceting:
 <table>
 <tr><td valign="top">scores:</td><td>If set to true this will return the score as a &#8216;solr_score&#8217;
 attribute for each one of the instances found. Does not currently work with
-<a href="ClassMethods.html#M000112">find_id_by_solr</a>
+<a href="ClassMethods.html#M000113">find_id_by_solr</a>
 
 <pre>
   books = Book.find_by_solr 'ruby OR splinter', :scores =&gt; true
@@ -302,12 +322,12 @@ you&#8216;re using fragment caching based solely on types and ids.
         </div>
       </div>
 
-      <div id="method-M000112" class="method-detail">
-        <a name="M000112"></a>
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
 
         <div class="method-heading">
-          <a href="ClassMethods.src/M000112.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000112.html');return false;">
+          <a href="ClassMethods.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000113.html');return false;">
           <span class="method-name">find_id_by_solr</span><span class="method-args">(query, options={})</span>
           </a>
         </div>
@@ -321,36 +341,8 @@ Finds instances of a model and returns an array with the ids:
 </pre>
 <p>
 The options accepted are the same as <a
-href="ClassMethods.html#M000111">find_by_solr</a>
+href="ClassMethods.html#M000112">find_by_solr</a>
 </p>
-        </div>
-      </div>
-
-      <div id="method-M000114" class="method-detail">
-        <a name="M000114"></a>
-
-        <div class="method-heading">
-          <a href="ClassMethods.src/M000114.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000114.html');return false;">
-          <span class="method-name">find_multi_search_objects</span><span class="method-args">(data, options)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-        </div>
-      </div>
-
-      <div id="method-M000118" class="method-detail">
-        <a name="M000118"></a>
-
-        <div class="method-heading">
-          <a href="ClassMethods.src/M000118.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000118.html');return false;">
-          <span class="method-name">find_with_facet</span><span class="method-args">(query, options={})</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
         </div>
       </div>
 
@@ -360,6 +352,34 @@ href="ClassMethods.html#M000111">find_by_solr</a>
         <div class="method-heading">
           <a href="ClassMethods.src/M000115.html" target="Code" class="method-signature"
             onclick="popupCode('ClassMethods.src/M000115.html');return false;">
+          <span class="method-name">find_multi_search_objects</span><span class="method-args">(data, options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="ClassMethods.src/M000119.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000119.html');return false;">
+          <span class="method-name">find_with_facet</span><span class="method-args">(query, options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="ClassMethods.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000116.html');return false;">
           <span class="method-name">multi_model_suffix</span><span class="method-args">(options)</span>
           </a>
         </div>
@@ -368,12 +388,12 @@ href="ClassMethods.html#M000111">find_by_solr</a>
         </div>
       </div>
 
-      <div id="method-M000113" class="method-detail">
-        <a name="M000113"></a>
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
 
         <div class="method-heading">
-          <a href="ClassMethods.src/M000113.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000113.html');return false;">
+          <a href="ClassMethods.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000114.html');return false;">
           <span class="method-name">multi_solr_search</span><span class="method-args">(query, options = {})</span>
           </a>
         </div>
@@ -388,7 +408,7 @@ This method can be used to execute a search across multiple models:
 <h4>options:</h4>
 <p>
 Accepts the same options as <a
-href="ClassMethods.html#M000111">find_by_solr</a> plus:
+href="ClassMethods.html#M000112">find_by_solr</a> plus:
 </p>
 <table>
 <tr><td valign="top">models:</td><td>The additional models you&#8216;d like to include in the search
@@ -417,7 +437,7 @@ Where the value of each array is as Model:instance_id
 </td></tr>
 <tr><td valign="top">scores:</td><td>If set to true this will return the score as a &#8216;solr_score&#8217;
 attribute for each one of the instances found. Does not currently work with
-<a href="ClassMethods.html#M000112">find_id_by_solr</a>
+<a href="ClassMethods.html#M000113">find_id_by_solr</a>
 
 <pre>
   books = Book.multi_solr_search 'ruby OR splinter', :scores =&gt; true
@@ -431,12 +451,26 @@ attribute for each one of the instances found. Does not currently work with
         </div>
       </div>
 
-      <div id="method-M000117" class="method-detail">
-        <a name="M000117"></a>
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
 
         <div class="method-heading">
-          <a href="ClassMethods.src/M000117.html" target="Code" class="method-signature"
-            onclick="popupCode('ClassMethods.src/M000117.html');return false;">
+          <a href="ClassMethods.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000120.html');return false;">
+          <span class="method-name">paginate_by_solr</span><span class="method-args">(query, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="ClassMethods.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('ClassMethods.src/M000118.html');return false;">
           <span class="method-name">rebuild_solr_index</span><span class="method-args">(batch_size=0, &amp;finder)</span>
           </a>
         </div>

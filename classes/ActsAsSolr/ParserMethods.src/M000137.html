@@ -5,22 +5,16 @@
 
 <html>
 <head>
-  <title>add_scores (ActsAsSolr::ParserMethods)</title>
+  <title>solr_type_condition (ActsAsSolr::ParserMethods)</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File lib/parser_methods.rb, line 171</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_scores</span>(<span class="ruby-identifier">results</span>, <span class="ruby-identifier">solr_data</span>)
-      <span class="ruby-identifier">with_score</span> = []
-      <span class="ruby-identifier">solr_data</span>.<span class="ruby-identifier">hits</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
-        <span class="ruby-identifier">with_score</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">doc</span>[<span class="ruby-value str">&quot;score&quot;</span>], 
-          <span class="ruby-identifier">results</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span> <span class="ruby-identifier">scorable_record?</span>(<span class="ruby-identifier">record</span>, <span class="ruby-identifier">doc</span>) }])
-      <span class="ruby-keyword kw">end</span>
-      <span class="ruby-identifier">with_score</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">score</span>, <span class="ruby-identifier">object</span><span class="ruby-operator">|</span> 
-        <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object</span>; <span class="ruby-identifier">attr_accessor</span> <span class="ruby-identifier">:solr_score</span>; <span class="ruby-keyword kw">end</span>
-        <span class="ruby-identifier">object</span>.<span class="ruby-identifier">solr_score</span> = <span class="ruby-identifier">score</span>
-      <span class="ruby-keyword kw">end</span>
+  <pre><span class="ruby-comment cmt"># File lib/parser_methods.rb, line 97</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">solr_type_condition</span>
+      <span class="ruby-identifier">subclasses</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-node">&quot;(#{solr_configuration[:type_field]}:#{self.name}&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">condition</span>, <span class="ruby-identifier">subclass</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">condition</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; OR #{solr_configuration[:type_field]}:#{subclass.name}&quot;</span>
+      <span class="ruby-keyword kw">end</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">')'</span>
     <span class="ruby-keyword kw">end</span></pre>
 </body>
 </html>
