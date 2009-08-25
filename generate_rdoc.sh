@@ -1,6 +1,6 @@
 #!/bin/sh
+rm -rf /tmp/websolr-rails*
 git clone git@github.com:onemorecloud/websolr-rails.git /tmp/websolr-rails  
-rm -rf /tmp/websolr-rails-rdoc                                          
 rdoc --op /tmp/websolr-rails-rdoc --main README.rdoc README.rdoc lib    
 cd /tmp/websolr-rails                                                   
 git checkout origin/gh-pages                                            
