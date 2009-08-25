@@ -94,6 +94,7 @@ Gem::Specification.new do |s|
      "lib/websolr_option_parser.rb",
      "lib/websolr_rails.rb",
      "lib/websolr_rails/tasks.rb",
+     "lib/will_paginate_support.rb",
      "solr/CHANGES.txt",
      "solr/LICENSE.txt",
      "solr/NOTICE.txt",
