@@ -37,7 +37,6 @@ Gem::Specification.new do |s|
      "lib/deprecation.rb",
      "lib/instance_methods.rb",
      "lib/lazy_document.rb",
-     "lib/model_methods.rb",
      "lib/parser_methods.rb",
      "lib/search_results.rb",
      "lib/solr.rb",

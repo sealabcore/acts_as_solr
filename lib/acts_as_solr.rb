@@ -32,7 +32,6 @@ require File.dirname(__FILE__) + '/deprecation'
 require File.dirname(__FILE__) + '/search_results'
 require File.dirname(__FILE__) + '/lazy_document'
 require File.dirname(__FILE__) + '/will_paginate_support'
-require File.dirname(__FILE__) + '/model_methods'
 module ActsAsSolr
   
   class Post    

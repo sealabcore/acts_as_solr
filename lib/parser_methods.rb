@@ -136,7 +136,6 @@ module ActsAsSolr #:nodoc:
       sr = SearchResults.new(results)
 
       sr.records.each do |model|
-        model.extend(::ActsAsSolr::ModelMethods)
         model.init_solr(results)
       end
       
