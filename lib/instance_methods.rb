@@ -15,6 +15,7 @@ module ActsAsSolr #:nodoc:
       if method.to_s =~ /^highlighted_(.*)$/ && a.length == 0
         original_field = $1
         @solr_data && @solr_data[:highlights] && @solr_data[:highlights][id] && 
+          @solr_data[:highlights][id][original_field] && 
           @solr_data[:highlights][id][original_field].join(" ") || send(original_field)
       else
         method_missing_without_solr_magic(method, *a, &b)
