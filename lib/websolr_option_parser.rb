@@ -7,13 +7,13 @@ class WebsolrOptionParser < OptionParser
 "Usage: #{$0} COMMAND [INDEX_NAME] [options] 
 
     COMMANDs:
-    start       - starts the local development server
-    stop        - stops the local development server
+    local:start     - starts the local development server
+    local:stop      - stops the local development server
 
-    add        - creates a new index
-    list       - shows your indexes
-    delete     - deletes an index
-    configure  - adds websolr to your current Rails app
+    add             - creates a new index
+    list            - shows your indexes
+    delete          - deletes an index
+    configure       - adds websolr to your current Rails app
     
 "
   end

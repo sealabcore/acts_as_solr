@@ -18,16 +18,18 @@ mkdir_p SOLR_PIDS_PATH
 mkdir_p SOLR_DATA_PATH
 
 class WebsolrController
-  COMMANDS = %w[add list delete configure start stop]
+  COMMANDS = %w[add list delete configure local:start local:stop]
   SOLR_PORT = 8983
   
   def initialize(parser)
     @options = parser.options
     @command = @options.delete(:command)
     @parser = parser
-    @user = @options[:user] || ENV["WEBSOLR_USER"]
-    @pass = @options[:pass] || ENV["WEBSOLR_PWD"]
-    @base = "http://#{URI::escape @user}:#{URI::escape @pass}@websolr.com"
+    @user = @options[:user] ||= ENV["WEBSOLR_USER"]
+    @pass = @options[:pass] ||= ENV["WEBSOLR_PWD"]
+    if @user && @pass
+      @base = "http://#{URI::escape @user}:#{URI::escape @pass}@websolr.com"
+    end
   end
   
   def die(s)
@@ -36,6 +38,16 @@ class WebsolrController
   end
   
   def required_options(hash)
+    hash = hash.dup
+    if hash.delete(:auth) && (!@user || !@pass)
+      die <<-STR
+
+      You need to specify your username and password, either on the command
+      line with the -u and -p flags, or in the WEBSOLR_USER and WEBSOLR_PWD
+      environment variables.
+
+      STR
+    end
     hash.inject(true) do |memo, (key, flag)|
       unless @options[key]
         STDERR.puts "Please use the #{flag} flag to specify the #{key}."
@@ -56,16 +68,37 @@ class WebsolrController
       die("I can't find config/environment.rb.  Are we in a rails app?")
     end
     
-    unless url = ENV["WEBSOLR_URL"]
-      die("The WEBSOLR_URL environment variable is not set.\nHave you run websolr configure?")
+    unless ENV["WEBSOLR_URL"]
+      ENV["WEBSOLR_URL"] = "http://localhost:8983/solr"
+      puts <<-STR
+      
+      You haven't configured your app.  You might want to do that. I 
+      assume you just want a quick development server, so I'll start 
+      one up for you at http://localhost:8983/solr.
+      
+      You should let Rails know about it by setting the WEBSOLR_URL, i.e:
+      
+      > ./script/server WEBSOLR_URL=http://localhost:8983/solr
+      
+      If you want to set up a full environment, run websolr configure.
+      
+      STR
+      puts "Is this what you want? [yes]"
+      if STDIN.gets.strip =~/^(yes)?$/i
+        puts "Continuing...."
+      else
+        die "Aborted."
+      end
     end
-    uri = URI.parse(url)
+    
+    
+    uri = URI.parse(ENV["WEBSOLR_URL"])
     @port = uri.port
   rescue URI::InvalidURIError => e
     die(e.message)
   end
   
-  def cmd_start
+  def cmd_local_start
     check_local_solr_conditions    
     begin
       n = Net::HTTP.new('127.0.0.1', @port)
@@ -86,7 +119,7 @@ class WebsolrController
     end
   end
   
-  def cmd_stop
+  def cmd_local_stop
     ENV["RAILS_ENV"] = @options[:rails_env] || ENV["RAILS_ENV"] || "development"
     fork do
       file_path = "#{SOLR_PIDS_PATH}/#{ENV['RAILS_ENV']}_pid"
@@ -105,13 +138,13 @@ class WebsolrController
   end
   
   def cmd_add
-    required_options :name => "-n"
+    required_options :name => "-n", :auth => true
     doc = post "/slices.xml", {:slice => {:name => name}}
     puts "#{x doc, '//name'}\t#{x doc, '//base-url'}"
   end
   
   def cmd_delete
-    required_options :name => "-n"
+    required_options :name => "-n", :auth => true
     delete "/slices/#{name}/destroy"
     puts "done"
   end
@@ -121,6 +154,7 @@ class WebsolrController
   end
   
   def cmd_list
+    required_options :auth => true
     doc = get "/slices.xml"
     REXML::XPath.each(doc, "//slice") do |node|
       puts "#{x node, 'name'}\t#{x node, 'base-url'}"
@@ -147,7 +181,7 @@ class WebsolrController
   end
   
   def cmd_configure
-    required_options :name => "-n"
+    required_options :name => "-n", :auth => true
     doc = get "/slices.xml"
     found = false
     REXML::XPath.each(doc, "//slice") do |node|
@@ -163,7 +197,7 @@ case RAILS_ENV
 when 'production'
   ENV['WEBSOLR_URL'] ||= '#{x node, 'base-url'}'
 else
-  ENV['WEBSOLR_URL'] ||= 'http://localhost:8983'
+  ENV['WEBSOLR_URL'] ||= 'http://localhost:8983/solr'
 end
 STR
           f.puts str
@@ -184,21 +218,10 @@ STR
   end
   
   def start
-    if @user || @pass
-      if(COMMANDS.include?(@command))
-        send("cmd_#{@command}")
-      else
-        puts @parser
-        exit(1)
-      end
+    if(COMMANDS.include?(@command))
+      send("cmd_#{@command.gsub(/\W+/, '_')}")
     else
-      puts <<-STR
-      
-    You need to specify your username and password, either on the command
-    line with the -u and -p flags, or in the WEBSOLR_USER and WEBSOLR_PWD
-    environment variables.
-    
-      STR
+      puts @parser
       exit(1)
     end
   end
