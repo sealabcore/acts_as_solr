@@ -32,6 +32,7 @@ require File.dirname(__FILE__) + '/deprecation'
 require File.dirname(__FILE__) + '/search_results'
 require File.dirname(__FILE__) + '/lazy_document'
 module ActsAsSolr
+  class ConnectionError < RuntimeError; end
   
   class Post    
     def self.execute(request)
@@ -47,7 +48,7 @@ module ActsAsSolr
         connection = Solr::Connection.new(url)
         return connection.send(request)
       rescue 
-        raise "Couldn't connect to the Solr server at #{url}. #{$!}"
+        raise ActsAsSolr::ConnectionError, "Couldn't connect to the Solr server at #{url}. #{$!}"
         false
       end
     end
