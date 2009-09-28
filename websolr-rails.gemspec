@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{websolr-rails}
-  s.version = "1.4.1"
+  s.version = "1.4.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2009-09-15}
+  s.date = %q{2009-09-27}
   s.default_executable = %q{websolr}
   s.description = %q{acts_as_solr compatible gem for websolr}
   s.email = %q{kyle@kylemaxwell.com}
@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
      "generate_rdoc.sh",
      "lib/acts_as_solr.rb",
      "lib/acts_methods.rb",
+     "lib/any_model.rb",
      "lib/class_methods.rb",
      "lib/common_methods.rb",
      "lib/deprecation.rb",
@@ -190,7 +191,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/onemorecloud/websolr-rails}
   s.rdoc_options = ["--main", "README.rdoc", "README.rdoc", "lib"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.4}
   s.summary = %q{acts_as_solr compatible gem for websolr}
   s.test_files = [
     "test/db/connections/mysql/connection.rb",
