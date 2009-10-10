@@ -155,6 +155,12 @@ class Solr::Connection
   # send the http post request to solr; for convenience there are shortcuts
   # to some requests: add(), query(), commit(), delete() or send()
   def post(request)
+    if ENV["DEBUG"]
+      puts "POST #{@url.path + "/" + request.handler}"
+      puts "-- DATA -------------------"
+      puts request.to_s
+      puts "-- END DATA ---------------"
+    end
     response = @connection.post(@url.path + "/" + request.handler,
                                 request.to_s,
                                 { "Content-Type" => request.content_type })

@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
      "generate_rdoc.sh",
      "lib/acts_as_solr.rb",
      "lib/acts_methods.rb",
-     "lib/any_model.rb",
      "lib/class_methods.rb",
      "lib/common_methods.rb",
      "lib/deprecation.rb",
