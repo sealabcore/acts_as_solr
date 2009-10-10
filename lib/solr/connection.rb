@@ -16,6 +16,8 @@ require 'net/http'
 
 class Solr::Connection
   attr_reader :url, :autocommit, :connection
+  
+  ILLEGAL_XML_CHARS = /[\x00-\x1F]/
 
   # create a connection to a solr instance using the url for the solr
   # application context:
@@ -161,6 +163,9 @@ class Solr::Connection
       puts request.to_s
       puts "-- END DATA ---------------"
     end
+    
+    request = request.gsub(ILLEGAL_XML_CHARS, '')
+    
     response = @connection.post(@url.path + "/" + request.handler,
                                 request.to_s,
                                 { "Content-Type" => request.content_type })
