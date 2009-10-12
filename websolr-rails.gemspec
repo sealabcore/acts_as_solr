@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{onemorecloud-websolr-rails}
-  s.version = "1.4.3"
+  s.name = %q{websolr-rails}
+  s.version = "1.4.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2009-10-10}
+  s.date = %q{2009-10-11}
   s.default_executable = %q{websolr}
   s.description = %q{acts_as_solr compatible gem for websolr}
   s.email = %q{kyle@kylemaxwell.com}
