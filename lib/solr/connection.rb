@@ -164,7 +164,7 @@ class Solr::Connection
       puts "-- END DATA ---------------"
     end
     
-    request = request.gsub(ILLEGAL_XML_CHARS, '')
+    request = request.to_s.gsub(ILLEGAL_XML_CHARS, '')
     
     response = @connection.post(@url.path + "/" + request.handler,
                                 request.to_s,
