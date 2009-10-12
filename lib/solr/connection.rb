@@ -164,10 +164,8 @@ class Solr::Connection
       puts "-- END DATA ---------------"
     end
     
-    request = request.to_s.gsub(ILLEGAL_XML_CHARS, '')
-    
     response = @connection.post(@url.path + "/" + request.handler,
-                                request.to_s,
+                                request.to_s.gsub(ILLEGAL_XML_CHARS, ''),
                                 { "Content-Type" => request.content_type })
   
     case response
