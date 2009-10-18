@@ -31,6 +31,7 @@ require File.dirname(__FILE__) + '/common_methods'
 require File.dirname(__FILE__) + '/deprecation'
 require File.dirname(__FILE__) + '/search_results'
 require File.dirname(__FILE__) + '/lazy_document'
+require File.dirname(__FILE__) + '/will_paginate_support'
 module ActsAsSolr
   class ConnectionError < RuntimeError; end
   
