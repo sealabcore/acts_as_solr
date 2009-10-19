@@ -1,6 +1,18 @@
 require 'rubygems'
 require 'rake'
 
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+Dir["#{File.dirname(__FILE__)}/lib/tasks/**/*.rake"].sort.each { |ext| load ext }
+
+desc "Default Task"
+task :default => [:test]
+
+desc "Runs the unit tests"
+task :test => "test:unit"
+
+
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
