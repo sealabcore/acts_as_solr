@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "TESTING_THE_PLUGIN",
      "VERSION",
+     "acts_as_solr.gemspec",
      "config/solr.yml",
      "config/solr_environment.rb",
      "init.rb",
