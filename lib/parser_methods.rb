@@ -165,13 +165,13 @@ module ActsAsSolr #:nodoc:
     
     # Reorders the instances keeping the order returned from Solr
     def reorder(things, ids)
-      ordered_things = Array.new(things.size)
+      ordered_things = Array.new([things.size, ids.size].max)
       # raise "Out of sync! Found #{ids.size} items in index, but only #{things.size} were found in database!" unless things.size == ids.size
       things.each do |thing|
         position = ids.index(thing.id)
         ordered_things[position] = thing
       end
-      ordered_things
+      ordered_things.compact
     end
 
     # Replaces the field types based on the types (if any) specified
