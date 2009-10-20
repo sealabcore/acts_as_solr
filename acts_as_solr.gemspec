@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_solr}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2009-10-18}
+  s.date = %q{2009-10-20}
   s.description = %q{Acts As Solr}
   s.email = %q{kyle@onemorecloud.com}
   s.extra_rdoc_files = [
