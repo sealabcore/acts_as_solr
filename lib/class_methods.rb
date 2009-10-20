@@ -113,6 +113,7 @@ module ActsAsSolr #:nodoc:
     #
     def find_by_solr(query, options={})
       data = parse_query(query, options)
+      puts data.inspect
       return parse_results(data, options) if data
     end
     

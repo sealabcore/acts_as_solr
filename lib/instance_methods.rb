@@ -37,6 +37,8 @@ module ActsAsSolr #:nodoc:
       else
         solr_destroy
       end
+    rescue ConnectionError
+      false
     end
 
     def indexing_disabled?
@@ -50,6 +52,8 @@ module ActsAsSolr #:nodoc:
       solr_delete solr_id
       solr_commit if configuration[:auto_commit]
       true
+    rescue ConnectionError
+      false
     end
 
     # convert instance to Solr document
