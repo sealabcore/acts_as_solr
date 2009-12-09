@@ -88,8 +88,14 @@ module ActsAsSolr #:nodoc:
         order = options[:order].split(/\s*,\s*/).collect{|e| e.gsub(/\s+/,'_t ').gsub(/\bscore_t\b/, 'score')  }.join(',') if options[:order] 
         query_options[:query] = replace_types([query])[0] # TODO adjust replace_types to work with String or Array  
 
-        query_options[:sort] = replace_types([order], false)[0] if options[:order]  
-        
+        if options[:order].is_a?(String)  
+          string = replace_types([order], false)[0]
+          field, direction = string.split(/\s+/)
+          direction = direction.to_s =~ /asc/i ? :ascending : :descending
+          query_options[:sort] = [{field => direction}]
+        elsif options[:order]
+          query_options[:sort] = options[:order]
+        end
         ActsAsSolr::Post.execute(Solr::Request::Standard.new(query_options))
       rescue
         raise "There was a problem executing your search: #{$!} in #{$!.backtrace.first}"

@@ -50,7 +50,8 @@ class Solr::Request::Standard < Solr::Request::Select
       key = sort.keys[0]
       "#{key.to_s} #{sort[key] == :descending ? 'desc' : 'asc'}"
     end.join(',') if @params[:sort]
-    hash[:q] = sort ? "#{@params[:query]};#{sort}" : @params[:query]
+    hash[:q] = @params[:query]
+    hash[:sort] = sort if sort
     hash["q.op"] = @params[:operator]
     hash[:df] = @params[:default_field]
 
