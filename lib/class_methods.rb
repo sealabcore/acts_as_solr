@@ -211,20 +211,21 @@ module ActsAsSolr #:nodoc:
         offset = 0
         begin
           iteration_start = Time.now
-          items = finder.call(self, {:limit => limit, :offset => offset})
-          add_batch = items.collect { |content| content.to_solr_doc }
-    
+          items = finder.call(self, {:limit => limit, :offset => offset, :readonly => true})
+          items_processed += items.size
+          last_id = items.last.id if items.last
+          offset += items.size
+
+          items.collect! { |content| content.to_solr_doc }
           if items.size > 0
-            solr_add add_batch
+            solr_add items
             solr_commit
           end
     
-          items_processed += items.size
-          last_id = items.last.id if items.last
           time_so_far = Time.now - start_time
           iteration_time = Time.now - iteration_start         
           logger.info "#{Process.pid}: #{items_processed} items for #{self.name} have been batch added to index in #{'%.3f' % time_so_far}s at #{'%.3f' % (items_processed / time_so_far)} items/sec (#{'%.3f' % (items.size / iteration_time)} items/sec for the last batch). Last id: #{last_id}"
-          offset += items.size
+          
         end while items.nil? || items.size > 0
       else
         items = finder.call(self, {})
