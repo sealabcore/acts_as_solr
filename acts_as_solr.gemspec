@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_solr}
-  s.version = "1.1.1"
+  s.version = "1.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2009-12-09}
+  s.date = %q{2010-03-02}
   s.description = %q{Acts As Solr}
   s.email = %q{kyle@onemorecloud.com}
   s.extra_rdoc_files = [
@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "config/solr_environment.rb",
      "init.rb",
      "install.rb",
+     "lib/aas_tasks.rb",
      "lib/acts_as_solr.rb",
      "lib/acts_methods.rb",
      "lib/class_methods.rb",
