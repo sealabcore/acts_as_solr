@@ -5,13 +5,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_solr}
-  s.version = "1.1.3"
+  s.version = "1.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
   s.date = %q{2010-03-02}
+  s.default_executable = %q{acts_as_solr}
   s.description = %q{Acts As Solr}
   s.email = %q{kyle@onemorecloud.com}
+  s.executables = ["acts_as_solr"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.markdown",
@@ -28,6 +30,7 @@ Gem::Specification.new do |s|
      "TESTING_THE_PLUGIN",
      "VERSION",
      "acts_as_solr.gemspec",
+     "bin/acts_as_solr",
      "config/solr.yml",
      "config/solr_environment.rb",
      "init.rb",
