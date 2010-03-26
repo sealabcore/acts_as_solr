@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_solr}
-  s.version = "1.2.0"
+  s.version = "1.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2010-03-02}
+  s.date = %q{2010-03-26}
   s.default_executable = %q{acts_as_solr}
   s.description = %q{Acts As Solr}
   s.email = %q{kyle@onemorecloud.com}
@@ -188,7 +188,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/onemorecloud/acts_as_solr}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Solr integration for rails}
   s.test_files = [
     "test/db/connections/mysql/connection.rb",
