@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
-  s.date = %q{2010-03-26}
+  s.date = %q{2010-03-29}
   s.default_executable = %q{acts_as_solr}
   s.description = %q{Acts As Solr}
   s.email = %q{kyle@onemorecloud.com}
