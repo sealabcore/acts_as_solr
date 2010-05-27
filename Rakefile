@@ -21,7 +21,7 @@ begin
     gem.description = "Acts As Solr"
     gem.email = "kyle@onemorecloud.com"
     gem.homepage = "http://github.com/onemorecloud/acts_as_solr"
-    gem.authors = ["Kyle Maxwell"]
+    gem.authors = ["Kyle Maxwell", "Nick Zadrozny"]
     gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
