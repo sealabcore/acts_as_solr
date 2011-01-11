@@ -66,7 +66,7 @@ namespace :solr do
 
     includes = env_array_to_constants('ONLY')
     if includes.empty?
-      includes = Dir.glob("#{RAILS_ROOT}/app/models/*.rb").map { |path| File.basename(path, ".rb").camelize.constantize }
+      includes = Dir.glob("#{Rails.root.to_s}/app/models/*.rb").map { |path| File.basename(path, ".rb").camelize.constantize }
     end
     excludes = env_array_to_constants('EXCEPT')
     includes -= excludes
